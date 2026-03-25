@@ -62,6 +62,7 @@
             btnGet.TabIndex = 2;
             btnGet.Text = "Взять";
             btnGet.UseVisualStyleBackColor = true;
+            btnGet.Click += btnGet_Click;
             // 
             // txtOut
             // 
