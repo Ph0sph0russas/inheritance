@@ -7,14 +7,18 @@ using System.Threading.Tasks;
 // БУДТЕ ВНИМАТЕЛЬНЕЕ: ТУТ ДОЛЖЕН СТОЯТЬ ТОТ ЖЕ namespace что и в Program.cs
 namespace WinFormsApp1
 {
-    public class Sun
+    public class Weather
+    {
+
+    }
+    public class Sun : Weather
     {
         public int temperature=0;
         public int altitudeAboveHorizon=0;
         public bool presenceOfBreeze=false;
     }
 
-    public class Rain
+    public class Rain : Weather
     {
         public int temperature = 0;
         public int precipitationAmount = 0;
@@ -24,7 +28,7 @@ namespace WinFormsApp1
 
     public enum snowType {small, flakes, moist};
 
-    public class Snow
+    public class Snow : Weather
     {
         public int temperature=0;
         public snowType type = snowType.small;
