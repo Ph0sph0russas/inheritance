@@ -32,6 +32,8 @@
             txtInfo = new RichTextBox();
             btnGet = new Button();
             txtOut = new RichTextBox();
+            queueTxtOut = new RichTextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnRefill
@@ -72,11 +74,30 @@
             txtOut.TabIndex = 3;
             txtOut.Text = "";
             // 
+            // queueTxtOut
+            // 
+            queueTxtOut.Location = new Point(12, 290);
+            queueTxtOut.Name = "queueTxtOut";
+            queueTxtOut.Size = new Size(203, 144);
+            queueTxtOut.TabIndex = 4;
+            queueTxtOut.Text = "";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 272);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Очередь";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(353, 269);
+            ClientSize = new Size(360, 446);
+            Controls.Add(label1);
+            Controls.Add(queueTxtOut);
             Controls.Add(txtOut);
             Controls.Add(btnGet);
             Controls.Add(txtInfo);
@@ -84,6 +105,7 @@
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -92,5 +114,7 @@
         private RichTextBox txtInfo;
         private Button btnGet;
         private RichTextBox txtOut;
+        private RichTextBox queueTxtOut;
+        private Label label1;
     }
 }

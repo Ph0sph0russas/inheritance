@@ -18,13 +18,13 @@ namespace WinFormsApp1
                 switch (rnd.Next() % 3)
                 {
                     case 0:
-                        this.weatherList.Add(new Sun());
+                        this.weatherList.Add(Sun.Generate());
                         break;
                     case 1:
-                        this.weatherList.Add(new Rain());
+                        this.weatherList.Add(Rain.Generate());
                         break;
                     case 2:
-                        this.weatherList.Add(new Snow());
+                        this.weatherList.Add(Snow.Generate());
                         break;
                 }
             }
@@ -54,11 +54,29 @@ namespace WinFormsApp1
             txtInfo.Text = "Солнце\tДождь\tСнег";
             txtInfo.Text += "\n";
             txtInfo.Text += String.Format("{0}\t{1}\t{2}", sunCount, rainCount, snowCount);
+            if (this.weatherList.Count==0)
+            {
+                queueTxtOut.Text = "";
+            }
+            else
+            {
+                queueTxtOut.Text = "";
+                foreach (var weather in weatherList)
+                {
+                    var outputStr = weather.GetInfo();
+                    var index = outputStr.IndexOf('\n');
+                    outputStr = outputStr.Substring(0, index);
+                    outputStr += "\n";
+                    queueTxtOut.Text += outputStr;
+                }
+            }
+
+
         }
 
         private void btnGet_Click(object sender, EventArgs e)
         {
-            if (this.weatherList.Count==0)
+            if (this.weatherList.Count == 0)
             {
                 txtOut.Text = "Пусто";
                 return;
